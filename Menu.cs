@@ -16,11 +16,13 @@ namespace HTMLeditor {
             WriteOptions();
 
             var option = short.Parse(Console.ReadLine());
+
+            HandleMenuOption(option);
         } 
         public static void DrawScreen() { // Responsavel pelo layout da tela.
-            Moldura();
+            Frame();
         } 
-        public static void Moldura() { // Responsavel pela criação da moldura do Menu.
+        public static void Frame() { // Responsavel pela criação da moldura do Menu.
             LinhaHorizontal();
             LinhaVertical();
             LinhaHorizontal();
@@ -62,6 +64,28 @@ namespace HTMLeditor {
             Console.SetCursorPosition(1, 11);
             Console.Write("Opção : ");
            
+        }
+
+        public static void HandleMenuOption(short option) {
+
+            switch (option) {
+
+                case 1:
+                    Console.WriteLine("Editor");
+                    break;
+                case 2:
+                    Console.WriteLine("View");
+                    break;
+                case 0: {
+                        Console.Clear();
+                        Environment.Exit(0);
+                        break;
+                    }
+                default:
+                    Show();
+                    break;
+
+            }
         }
 
     }
