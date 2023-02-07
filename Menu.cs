@@ -2,36 +2,38 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace HTMLeditor {
     public static class Menu {
 
-        public static void Show() {
-
+        public static void Show() { //  Responsavel pelo gerenciamento do Menu.
             Console.Clear();
-            Console.BackgroundColor = ConsoleColor.Blue;
-            Console.ForegroundColor = ConsoleColor.Black;
+            
 
             DrawScreen();
-        } //  Responsavel pelo gerenciamento do Menu.
-        public static void DrawScreen() {
-            Moldura();
-        } // Responsavel pelo layout da tela.
-        public static void Moldura() { 
-            Cabecalho();
-            Colunas();
-            Cabecalho();
+            WriteOptions();
 
-            static void Cabecalho() {
+            var option = short.Parse(Console.ReadLine());
+        } 
+        public static void DrawScreen() { // Responsavel pelo layout da tela.
+            Moldura();
+        } 
+        public static void Moldura() { // Responsavel pela criação da moldura do Menu.
+            LinhaHorizontal();
+            LinhaVertical();
+            LinhaHorizontal();
+
+            static void LinhaHorizontal() { //<-- Cria as linhas horizontais da moldura do Menu.
                 Console.Write("+");
                 for (int i = 0; i <= 30; i++)
                     Console.Write("-");
 
                 Console.Write("+");
                 Console.Write("\n");
-            } //<-- Cria as linhas horizontais da moldura do Menu.
-            static void Colunas() {
+            } 
+            static void LinhaVertical() { //<-- Cria as colunas verticais da moldura do Menu.
                 for (int lines = 0; lines <= 10; lines++) {
                     Console.Write("|");
                     for (int i = 0; i <= 30; i++)
@@ -41,8 +43,26 @@ namespace HTMLeditor {
                     Console.Write("\n");
                 }
 
-            }   //<-- Cria as colunas verticais da moldura do Menu.
-        }   // Responsavel pela criação da moldura do Menu.
+            }   
+        }   
+
+        public static void WriteOptions() {
+            Console.SetCursorPosition(10,1);
+            Console.WriteLine("Editor de HTML");
+            Console.SetCursorPosition(10,2);
+            Console.WriteLine("==============");
+            Console.SetCursorPosition(1,4);
+            Console.WriteLine("Selecione uma opção: ");
+            Console.SetCursorPosition(1, 6);
+            Console.WriteLine("1 - Novo Arquivo: ");
+            Console.SetCursorPosition(1, 7);
+            Console.WriteLine("2 - Abrir : ");
+            Console.SetCursorPosition(1, 9);
+            Console.WriteLine("0 - Sair : ");
+            Console.SetCursorPosition(1, 11);
+            Console.Write("Opção : ");
+           
+        }
 
     }
 }
