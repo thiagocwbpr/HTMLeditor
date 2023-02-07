@@ -71,7 +71,7 @@ namespace HTMLeditor {
             switch (option) {
 
                 case 1:
-                    Console.WriteLine("Editor");
+                    Editor.Show();
                     break;
                 case 2:
                     Console.WriteLine("View");
