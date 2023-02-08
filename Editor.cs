@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace HTMLeditor {
     public static class Editor {
 
-        public static void Show() {
+        public static void Show() { // Responsavel por criar a tela do editor HTML.
             Console.Clear();
             Console.BackgroundColor = ConsoleColor.White;
             Console.BackgroundColor = ConsoleColor.Black;
@@ -17,7 +17,7 @@ namespace HTMLeditor {
             Start();
         }
 
-        public static void Start() {
+        public static void Start() { // Responsavel pela criação e edição do editor HTML.
             var file = new StringBuilder();
 
             do {

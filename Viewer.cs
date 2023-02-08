@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace HTMLeditor {
     public class Viewer {
 
-        public static void Show(string text) {
+        public static void Show(string text) { // Responsavel por criar a tela de visualização do editor.
             Console.Clear();
             Console.BackgroundColor = ConsoleColor.White;
             Console.ForegroundColor = ConsoleColor.Black;
@@ -21,7 +21,7 @@ namespace HTMLeditor {
             Menu.Show();
         }
 
-        public static void Replace(string text) {
+        public static void Replace(string text) { // Responsável pela modificação do texto em HTML e visualização.
 
             var strong = new Regex(@"<\s*strong[^>]*>(.*?)<\s*/\s*strong>");
             var words = text.Split(' ');
