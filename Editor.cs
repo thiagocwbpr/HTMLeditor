@@ -9,8 +9,8 @@ namespace HTMLeditor {
 
         public static void Show() {
             Console.Clear();
-            Console.BackgroundColor= ConsoleColor.White;
-            Console.ForegroundColor = ConsoleColor.Black;
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.Black;
             Console.Clear();
             Console.WriteLine("MODO EDITOR");
             Console.WriteLine("-----------");
@@ -22,11 +22,12 @@ namespace HTMLeditor {
 
             do {
                 file.Append(Console.ReadLine());
-                file.Append(" "+ Environment.NewLine);
+                file.Append(Environment.NewLine);
             } while (Console.ReadKey().Key != ConsoleKey.Escape);
 
             Console.WriteLine("-----------");
-            Console.WriteLine("  Deseja salvar o arquivo?");
+            Console.WriteLine(" Deseja salvar o arquivo?");
+            Viewer.Show(file.ToString());
         }
     }
 }
